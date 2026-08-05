@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Raw data IS versioned, so the repo is self-contained and reproducible.
+# Generated files are not: they are rebuilt by running the notebooks.
+data/processed/*
+!data/processed/.gitkeep
+
+# macOS
+.DS_Store
+
+# Presentation: kept local, not versioned
+slides/*
+!slides/.gitkeep

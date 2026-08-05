@@ -1,0 +1,30 @@
+# Analysis parameters for the Vanguard A/B test.
+# Paths do NOT belong here: they are resolved in src/project_template/paths.py
+# so that they work from any folder.
+
+experiment:
+  start: 2017-03-15
+  end: 2017-06-20
+  unit_of_analysis: client_id
+  groups:
+    - Control
+    - Test
+
+# Funnel order. Values match process_step exactly.
+funnel:
+  - start
+  - step_1
+  - step_2
+  - step_3
+  - confirm
+
+statistics:
+  alpha: 0.05
+
+# Filenames in data/raw/
+files:
+  demo: df_final_demo.txt
+  experiment: df_final_experiment_clients.txt
+  web:
+    - df_final_web_data_pt_1.txt
+    - df_final_web_data_pt_2.txt
