@@ -1596,7 +1596,7 @@ wheels = [
 [[package]]
 name = "project-2"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "ipykernel" },
     { name = "jupyter" },
@@ -1604,6 +1604,7 @@ dependencies = [
     { name = "numpy" },
     { name = "pandas" },
     { name = "plotly" },
+    { name = "pyyaml" },
     { name = "scipy" },
     { name = "seaborn" },
 ]
@@ -1616,6 +1617,7 @@ requires-dist = [
     { name = "numpy", specifier = ">=2.5.2" },
     { name = "pandas", specifier = ">=3.0.5" },
     { name = "plotly", specifier = ">=6.9.0" },
+    { name = "pyyaml", specifier = ">=6.0.3" },
     { name = "scipy", specifier = ">=1.18.0" },
     { name = "seaborn", specifier = ">=0.13.2" },
 ]

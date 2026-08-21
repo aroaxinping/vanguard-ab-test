@@ -1,0 +1,30 @@
+# Parámetros del análisis del test A/B de Vanguard.
+# Las rutas NO van aquí: se resuelven en src/project_template/paths.py
+# para que funcionen desde cualquier carpeta.
+
+experimento:
+  inicio: 2017-03-15
+  fin: 2017-06-20
+  unidad_experimental: client_id
+  grupos:
+    - Control
+    - Test
+
+# Orden del embudo. Los valores son tal como aparecen en process_step.
+embudo:
+  - start
+  - step_1
+  - step_2
+  - step_3
+  - confirm
+
+estadistica:
+  alpha: 0.05
+
+# Nombres de los archivos en data/raw/
+ficheros:
+  demo: df_final_demo.txt
+  experimento: df_final_experiment_clients.txt
+  web:
+    - df_final_web_data_pt_1.txt
+    - df_final_web_data_pt_2.txt

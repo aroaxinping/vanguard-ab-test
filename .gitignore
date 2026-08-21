@@ -9,8 +9,11 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# Datos
-data/
+# Datos: se mantiene la estructura de carpetas, se ignoran los archivos.
+# Los datos se descargan con: uv run python -m project_template.download
+data/**
+!data/**/
+!data/**/.gitkeep
 
 # macOS
 .DS_Store
