@@ -1,0 +1,8 @@
+# Configuración del proyecto
+# Rellenar a medida que avance el análisis.
+
+paths:
+  data: data/
+  figures: figures/
+  notebooks: notebooks/
+  sql_scripts: sql_scripts/

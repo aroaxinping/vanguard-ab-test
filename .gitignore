@@ -9,8 +9,10 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# Datos
-data/
+# Datos: se mantiene la carpeta, se ignora su contenido
+# (para subir un archivo concreto: git add -f data/mi_archivo.csv)
+data/*
+!data/.gitkeep
 
 # macOS
 .DS_Store
