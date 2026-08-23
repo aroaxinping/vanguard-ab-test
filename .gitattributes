@@ -1,0 +1,3 @@
+# Store the raw datasets exactly as downloaded: no line-ending conversion,
+# no diffing. They are inputs, not source code.
+data/raw/*.txt -text -diff

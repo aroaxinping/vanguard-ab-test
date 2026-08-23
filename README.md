@@ -16,15 +16,9 @@ uv sync
 
 `uv sync` creates the `.venv` environment and installs every library listed in `pyproject.toml`. You do not need to run `uv venv` or install anything by hand.
 
-### Download the data
+The datasets are versioned in `data/raw/`, so cloning is all you need — there is nothing to download.
 
-The datasets are around 68 MB and are not tracked in the repository. Download them with:
-
-```bash
-uv run python -m project_template.download
-```
-
-This drops the four files into `data/raw/`. If they are already there, it skips them.
+They are also available from Ironhack's public repo, and `uv run python -m project_template.download` re-fetches them if a file is ever lost or modified. It skips files that are already there.
 
 ### Register the Jupyter kernel
 
@@ -42,27 +36,32 @@ Do not hardcode paths. Import them:
 
 ```python
 import pandas as pd
-from project_template.paths import RAW_DIR, PROCESSED_DIR
-
-demo = pd.read_csv(RAW_DIR / "df_final_demo.txt")
-exp  = pd.read_csv(RAW_DIR / "df_final_experiment_clients.txt")
-web1 = pd.read_csv(RAW_DIR / "df_final_web_data_pt_1.txt")
-web2 = pd.read_csv(RAW_DIR / "df_final_web_data_pt_2.txt")
-```
-
-`RAW_DIR` is resolved from the repository root, so it works the same from `notebooks/`, from the root or from the terminal, and points to the right place on everyone's machine.
-
-Analysis parameters live in `config.yaml`:
-
-```python
+from project_template.paths import RAW_DIR
 from project_template.config import CONFIG
 
+files = CONFIG["files"]
+
+demo = pd.read_csv(RAW_DIR / files["demo"])
+exp = pd.read_csv(RAW_DIR / files["experiment"])
+web = pd.concat(
+    [pd.read_csv(RAW_DIR / f) for f in files["web"]],
+    ignore_index=True,
+)
+```
+
+That gives you 70,609 clients, 70,609 assignments and 755,405 web events.
+
+`RAW_DIR` is resolved from the repository root, so it works the same from `notebooks/`, from the root or from the terminal, and points to the right place on everyone's machine. Filenames come from `config.yaml`, so they are written down once rather than repeated across notebooks.
+
+The same file holds the analysis parameters:
+
+```python
 CONFIG["funnel"]                  # ['start', 'step_1', 'step_2', 'step_3', 'confirm']
 CONFIG["statistics"]["alpha"]     # 0.05
 CONFIG["experiment"]["start"]     # 2017-03-15
 ```
 
-Paths belong in `paths.py`, parameters in `config.yaml`. When you introduce a new analysis parameter, add it to the YAML rather than hardcoding it in a notebook.
+Paths belong in `paths.py`, everything else in `config.yaml`. When you introduce a new analysis parameter, add it to the YAML rather than hardcoding it in a notebook.
 
 ## The data
 
@@ -90,8 +89,8 @@ The logs record **events, not completed journeys**: a client may repeat steps, n
 ## Layout
 
 ```
-data/raw/         original data, never modified (git-ignored)
-data/processed/   clean data produced by the analysis
+data/raw/         original data, versioned and never modified
+data/processed/   clean data produced by the analysis (git-ignored)
 notebooks/        one notebook per person
 figures/          exported charts
 sql_scripts/      SQL queries

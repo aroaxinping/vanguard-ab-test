@@ -3,17 +3,16 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
-# Entorno virtual
+# Virtual environment
 .venv/
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Datos: se mantiene la estructura de carpetas, se ignoran los archivos.
-# Los datos se descargan con: uv run python -m project_template.download
-data/**
-!data/**/
-!data/**/.gitkeep
+# Raw data IS versioned, so the repo is self-contained and reproducible.
+# Generated files are not: they are rebuilt by running the notebooks.
+data/processed/*
+!data/processed/.gitkeep
 
 # macOS
 .DS_Store
