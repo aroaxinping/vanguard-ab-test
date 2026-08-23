@@ -1,30 +1,30 @@
-# Parámetros del análisis del test A/B de Vanguard.
-# Las rutas NO van aquí: se resuelven en src/project_template/paths.py
-# para que funcionen desde cualquier carpeta.
+# Analysis parameters for the Vanguard A/B test.
+# Paths do NOT belong here: they are resolved in src/project_template/paths.py
+# so that they work from any folder.
 
-experimento:
-  inicio: 2017-03-15
-  fin: 2017-06-20
-  unidad_experimental: client_id
-  grupos:
+experiment:
+  start: 2017-03-15
+  end: 2017-06-20
+  unit_of_analysis: client_id
+  groups:
     - Control
     - Test
 
-# Orden del embudo. Los valores son tal como aparecen en process_step.
-embudo:
+# Funnel order. Values match process_step exactly.
+funnel:
   - start
   - step_1
   - step_2
   - step_3
   - confirm
 
-estadistica:
+statistics:
   alpha: 0.05
 
-# Nombres de los archivos en data/raw/
-ficheros:
+# Filenames in data/raw/
+files:
   demo: df_final_demo.txt
-  experimento: df_final_experiment_clients.txt
+  experiment: df_final_experiment_clients.txt
   web:
     - df_final_web_data_pt_1.txt
     - df_final_web_data_pt_2.txt

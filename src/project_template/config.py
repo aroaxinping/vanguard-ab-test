@@ -1,10 +1,10 @@
-"""Carga de config.yaml.
+"""Loader for config.yaml.
 
-Uso desde un notebook:
+Usage from a notebook:
 
     from project_template.config import CONFIG
-    CONFIG["embudo"]          # ['start', 'step_1', ...]
-    CONFIG["estadistica"]["alpha"]
+    CONFIG["funnel"]                # ['start', 'step_1', ...]
+    CONFIG["statistics"]["alpha"]
 """
 
 import yaml

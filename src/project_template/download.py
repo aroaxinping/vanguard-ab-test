@@ -1,10 +1,10 @@
-"""Descarga los datasets del proyecto Vanguard en data/raw/.
+"""Download the Vanguard project datasets into data/raw/.
 
-Los datos no se versionan en el repo (pesan ~68 MB). Este script los baja
-del repo público de Ironhack para que todo el equipo trabaje con los mismos
-archivos en la misma ruta.
+The data is not tracked in the repository (~68 MB). This script fetches it
+from Ironhack's public repo so the whole team works from the same files at
+the same path.
 
-Uso:
+Usage:
     uv run python -m project_template.download
 """
 
@@ -29,17 +29,17 @@ def download(force: bool = False) -> None:
     RAW_DIR.mkdir(parents=True, exist_ok=True)
 
     for name in FILES:
-        destino = RAW_DIR / name
+        target = RAW_DIR / name
 
-        if destino.exists() and not force:
-            mb = destino.stat().st_size / 1024**2
-            print(f"ya existe   {name}  ({mb:.1f} MB)")
+        if target.exists() and not force:
+            mb = target.stat().st_size / 1024**2
+            print(f"already there  {name}  ({mb:.1f} MB)")
             continue
 
-        print(f"descargando {name} ...")
-        urllib.request.urlretrieve(BASE_URL + name, destino)
-        mb = destino.stat().st_size / 1024**2
-        print(f"listo       {name}  ({mb:.1f} MB)")
+        print(f"downloading    {name} ...")
+        urllib.request.urlretrieve(BASE_URL + name, target)
+        mb = target.stat().st_size / 1024**2
+        print(f"done           {name}  ({mb:.1f} MB)")
 
 
 if __name__ == "__main__":
