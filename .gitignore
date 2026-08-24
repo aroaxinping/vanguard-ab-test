@@ -16,3 +16,7 @@ data/processed/*
 
 # macOS
 .DS_Store
+
+# Presentation: kept local, not versioned
+slides/*
+!slides/.gitkeep
