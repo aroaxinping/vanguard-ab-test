@@ -4,6 +4,29 @@ Evaluation of the A/B test Vanguard ran between 15 March and 20 June 2017 on its
 
 Deliverables: a documented Jupyter notebook, a Tableau dashboard and a business presentation.
 
+## The questions we are answering
+
+The analysis is built around five questions, asked in this order. Each one depends on the previous being settled, which is why the work is sequenced rather than split by topic.
+
+| # | Question | What it means in practice |
+|---|---|---|
+| 1 | Can we trust our data? | Understand the datasets, find the quality issues, and decide how to handle each one |
+| 2 | Can we trust our experiment? | Check that Control and Test are comparable before comparing any outcome |
+| 3 | How should customer behaviour be measured? | Reconstruct journeys from raw events and define the KPIs |
+| 4 | What evidence supports our conclusions? | Test whether the differences are real, and whether they matter |
+| 5 | What should Vanguard do? | Turn the evidence into a recommendation a stakeholder can act on |
+
+The notebook, the dashboard and the presentation should tell the same story from different angles.
+
+## Team
+
+| Who | Role |
+|---|---|
+| Aroa | Project Manager — coordinates the work, reviews and merges pull requests, and analyses alongside everyone else |
+| Angélica | Data Analyst |
+
+The Project Manager role is about keeping the repository and the plan in order, not about deciding the analysis. Methodological choices are agreed between us, and both of us should be able to explain any part of the work.
+
 ## Getting started
 
 You need [uv](https://docs.astral.sh/uv/getting-started/installation/) installed.
@@ -100,6 +123,28 @@ src/project_template/
     config.py     config.yaml loader
     download.py   dataset download
 ```
+
+## Naming notebooks
+
+Notebooks follow the [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org/) convention, which is the usual standard for this kind of project:
+
+```
+<phase>.<iteration>-<author>-<short-description>.ipynb
+
+1.0-aroa-data-quality.ipynb
+│ │   │    └── what the notebook does, in kebab-case
+│ │   └─────── who wrote it, so two people never edit the same file
+│ └─────────── iteration within that phase
+└───────────── phase of the analysis
+```
+
+**The phase number** orders the work, so the folder sorts into the sequence the notebooks should be read in — one phase per question above.
+
+**The iteration number** exists so a phase can be split without renaming anything. If reconstructing journeys and computing KPIs get too big for one file, they become `3.0-` and `3.1-`. It is not a version number: `3.1` comes after `3.0`, it is not a better version of it.
+
+Plain `1-`, `2-`, `3-` would order things just as well, but inserting a notebook between two of them means renumbering everything after it. The decimal leaves room to insert.
+
+**The author suffix** is what keeps us out of each other's way. Notebooks are JSON with outputs embedded, so two people editing one file produce conflicts that are painful to resolve.
 
 ## Working agreements
 
