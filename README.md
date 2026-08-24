@@ -4,6 +4,26 @@ Evaluation of the A/B test Vanguard ran between 15 March and 20 June 2017 on its
 
 Deliverables: a documented Jupyter notebook, a Tableau dashboard and a business presentation.
 
+## Who we are working for
+
+Vanguard is not structured like its competitors, and that shapes what our recommendation should optimise for.
+
+Founded in 1975 by John Bogle, the company is **owned by its own funds, which are owned by their investors**. There are no outside shareholders. It operates *at cost*: surpluses come back to clients as lower fees rather than going out as dividends. It now manages around $10.4 trillion.
+
+The consequence for this project is that **reducing operating cost is not a saving for the company — it is a return for the client**. A client who cannot finish the process online and has to call generates a cost that ultimately comes out of the client-owners' pockets. An improvement in the online experience is therefore aligned with the company's founding purpose, not just with a conversion metric.
+
+Its client base reflects that purpose. Vanguard's core retail clients are in the 45–75 range, concentrated in retirement accounts and 401(k) rollovers, and balances rise steeply with age: an average of roughly $299,000 for clients aged 65 and over, against $6,900 for the under-25s. Median age at account opening has recently fallen to 33, so the company is attracting younger clients — but its assets still sit with older ones.
+
+Sources: [Vanguard's business model](https://www.latterly.org/vanguard-business-model/), [company profile](https://www.ebsco.com/research-starters/business-and-management/vanguard-group), [client demographics](https://businessmodelcanvastemplate.com/blogs/target-market/vanguard-target-market).
+
+## Visual identity
+
+The dashboard and the presentation should look like Vanguard documents, which the day 5 checklist asks for explicitly and the rubric rewards.
+
+The brand's primary colour is a **maroon**, chosen to convey reliability and long standing. The logo has been wordmark-only since the ship was dropped in 2020. The overall register is institutional and restrained: no gradients, no startup styling.
+
+Vanguard does not publish official hex codes. The values in circulation (`#A21918`, `#800000`) are sampled from the logo and are close enough to work with, but should not be presented as official.
+
 ## The questions we are answering
 
 The analysis is built around five questions, asked in this order. Each one depends on the previous being settled, which is why the work is sequenced rather than split by topic.
