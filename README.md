@@ -137,6 +137,7 @@ data/processed/   clean data produced by the analysis (git-ignored)
 notebooks/        one notebook per person
 figures/          exported charts
 sql_scripts/      SQL queries
+tableau/          Tableau workbooks (.twbx)
 slides/           presentation
 src/project_template/
     paths.py      project paths
