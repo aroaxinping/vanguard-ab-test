@@ -1,0 +1,9 @@
+transition,Variation,median_seconds,mean_seconds,observations,step_order
+start → step_1,Control,17.0,37.64846085167501,25761,0
+start → step_1,Test,10.0,31.032295789852466,33348,0
+step_1 → step_2,Control,18.0,33.82833848497066,22323,1
+step_1 → step_2,Test,24.0,37.10404161664666,27489,1
+step_2 → step_3,Control,66.0,87.0232339384818,21262,2
+step_2 → step_3,Test,66.0,86.48647978169188,24186,2
+step_3 → confirm,Control,76.0,127.13449833104261,15279,3
+step_3 → confirm,Test,52.0,104.84378234108611,18359,3
